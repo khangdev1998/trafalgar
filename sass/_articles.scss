@@ -1,0 +1,122 @@
+.articles {
+  background: url("../images/articles-bg.png") no-repeat center right -80px / auto;
+  text-align: center;
+  padding-top: 200px;
+  &__container {
+    position: relative;
+  }
+  &__container > .heading {
+    font-size: 36px;
+    line-height: calc(56 / 36);
+    position: relative;
+    margin-bottom: 107px;
+    padding-bottom: 26px;
+    &::after {
+      content: "";
+      @include blockCenter("left");
+      bottom: 0;
+      @include size(56px, 2px);
+      border-radius: 5px;
+      background-color: $dark-color;
+    }
+  }
+  &-bg {
+    position: absolute;
+    top: 9rem;
+    left: -33px;
+    width: 130px;
+    pointer-events: none;
+  }
+  &-wrapper {
+    position: relative;
+    margin-bottom: 70px;
+    @include flexbox(
+      (
+        justify-content: space-between,
+      )
+    );
+  }
+  &-wrapper__items {
+    overflow: hidden;
+    z-index: 10;
+    @include bgc($light-color);
+    box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.4);
+    width: calc(33.3333% - 23.3333px);
+    border-radius: 20px;
+  }
+  &-wrapper__image {
+    @include size(100%, 245px);
+    object-fit: cover;
+    display: block;
+  }
+  &-content {
+    padding: 24px 51px 35px 33px;
+    text-align: left;
+  }
+  &-content .heading {
+    font-weight: bold;
+    font-size: 21px;
+    line-height: calc(32 / 21);
+    color: $dark-color;
+    @include lineClamp(2);
+  }
+  &-content__more {
+    font-size: 17px;
+    line-height: calc(28 / 17);
+    color: $primary-color;
+    font-weight: 600;
+    text-decoration: none;
+    margin-right: 8px;
+  }
+  &-content__next {
+    @include size(15px, 9px);
+  }
+  .description {
+    color: $gray-color;
+    font-size: 16px;
+    line-height: calc(28 / 16);
+    padding: 12px 0 25px 0;
+  }
+  .btn {
+    padding: 0 65px !important;
+  }
+  @include maxWidth(1023px) {
+    padding-top: 100px;
+    &__container > .heading {
+      font-size: 28px;
+      margin-bottom: 60px;
+    }
+    &-wrapper {
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    &-wrapper__items {
+      width: calc(50% - 23.3333px);
+      margin-bottom: 20px;
+    }
+  }
+  @include maxWidth(767px) {
+    &__container > .heading {
+      font-size: 22px;
+    }
+    &-content .heading {
+      font-size: 18px;
+    }
+    .description {
+      font-size: 14px;
+    }
+  }
+  @include maxWidth(600px) {
+    &-wrapper {
+      @include scrollsnap(75%, 20px, none);
+      & > * {
+        width: 100%;
+      }
+    }
+  }
+  @include maxWidth(424px) {
+    &-wrapper {
+      @include scrollsnap(100%, 12px, none);
+    }
+  }
+}

@@ -1,0 +1,92 @@
+.footer {
+  color: $light-color;
+  margin-top: 200px;
+  width: 100%;
+  padding: 115px 0;
+  background: linear-gradient(183.41deg, #67c3f3 -8.57%, #5a98f2 82.96%);
+  position: relative;
+  &__bg {
+    position: absolute;
+    right: 90px;
+    top: -72px;
+    width: 130px;
+    z-index: -10;
+  }
+  &__round {
+    --round-bg: #85b3f5;
+    position: absolute;
+    left: 12px;
+    bottom: 85px;
+    @include size(10px);
+    @include bgc(var(--round-bg));
+    border-radius: 100rem;
+    box-shadow: 0 0 0 0, 30px 0 0 0 var(--round-bg), 60px 0 0 0 var(--round-bg),
+      90px 0 0 0 var(--round-bg), 0 25px 0 0 var(--round-bg),
+      30px 25px 0 0 var(--round-bg), 60px 25px 0 0 var(--round-bg),
+      90px 25px 0 0 var(--round-bg), 0 50px 0 0 var(--round-bg),
+      30px 50px 0 0 var(--round-bg), 60px 50px 0 0 var(--round-bg),
+      90px 50px 0 0 var(--round-bg), 0 75px 0 0 var(--round-bg),
+      30px 75px 0 0 var(--round-bg), 60px 75px 0 0 var(--round-bg),
+      90px 75px 0 0 var(--round-bg);
+  }
+  &-wrapper {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr 1fr 1fr;
+    grid-gap: 0 60px;
+  }
+  &-logo {
+    max-width: 100%;
+  }
+  &-wrapper__copyright {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.4;
+  }
+  &-wrapper__dev {
+    color: $light-color;
+    text-decoration: none;
+    &:hover {
+      transition: 0.4s;
+      opacity: 0.4;
+    }
+  }
+  &-wrapper__title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    word-break: break-all;
+  }
+  &-list__link {
+    color: $light-color;
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: calc(38 / 18);
+  }
+  .description {
+    font-size: 18px;
+    line-height: calc(28 / 18);
+    font-weight: 300;
+    padding: 17px 0 31px;
+    color: $light-color;
+  }
+  @include maxWidth(1023px) {
+    margin-top: 40px;
+    padding: 40px 0;
+    &-wrapper {
+      grid-template-columns: 2fr 1fr;
+      grid-gap: 40px;
+    }
+    &__round {
+      display: none;
+    }
+  }
+  @include maxWidth(599px) {
+    &-wrapper {
+      grid-template-columns: 1fr;
+      grid-gap: 40px 0;
+    }
+    &__bg {
+      display: none;
+    }
+  }
+}
